@@ -47,8 +47,6 @@ class ProjectController extends Controller
         $project->address = $attr[0]->address;
         $project->save();
 
-        return $project;
-
     }
 
     /**
