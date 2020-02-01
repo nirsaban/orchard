@@ -35,7 +35,19 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+         dd($request);
+        $project = new Project;
+        $project->home_size = request('home_size');
+        $project->bedroom_num =request('bedroom_num');
+        $project->bathroom_num =request('bathroom_num');
+        $project->floor_num = request('floor_num');
+        $project->owner = request('owner');
+        $project->gas =request('gas');
+        $project->address = request('address');
+        $project->save();
+
+
+
     }
 
     /**
