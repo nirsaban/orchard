@@ -36,7 +36,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
 
-       $attr = json_decode($request->project);
+       $attr = json_encode($request->project);
        return $attr->home_size;
 //        $project = new Project;
 //        $project->home_size = request('home_size');
