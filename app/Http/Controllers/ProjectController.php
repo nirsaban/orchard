@@ -35,8 +35,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-         echo "<pre>";
-         print_r($request);die();
+       return $request->project;
         $project = new Project;
         $project->home_size = request('home_size');
         $project->bedroom_num =request('bedroom_num');
