@@ -31,7 +31,7 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -60,19 +60,19 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
+     * @param Project $project
+     * @return Project
      */
     public function show(Project $project)
     {
-        return view('show', compact('project'));
+        return $project;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
+     * @param Project $project
+     * @return void
      */
     public function edit(Project $project)
     {
@@ -83,28 +83,26 @@ class ProjectController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Project  $project
+     * @param Project $project
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
        $project = Project::findOrFail($id);
         $project->update(['home_size' => 500]);
-
         return response()->json('updated', 201);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Project  $project
+     * @param Project $project
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $project = Project::findOrFail($id);
         $project->delete();
-
         return response()->json('Project Deleted', 201);
 
     }
