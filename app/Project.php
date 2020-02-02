@@ -21,6 +21,7 @@ class Project extends Model
         $project->gas = $attr->gas;
         $project->address = $attr->address;
         $project->comment = $attr->comment;
+        $project->save();
         if($project->id){
             $valid = true;
         }
