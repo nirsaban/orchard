@@ -13,11 +13,11 @@ class Project extends Model
         $attr = $data[0];
         $project = new self();
         $project->title = $attr->title;
+        $project->owner = $attr->owner;
         $project->home_size = $attr->home_size;
         $project->bedroom_num =$attr->bedroom_num;
         $project->bathroom_num =$attr->bathroom_num;
         $project->floor_num = $attr->floor_num;
-        $project->owner = $attr->owner;
         $project->gas = $attr->gas;
         $project->address = $attr->address;
         $project->comment = $attr->comment;
