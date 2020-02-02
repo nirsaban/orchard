@@ -5,6 +5,6 @@ Route::get('/', function () {
 });
 
 
-Route::resource('projects', 'ProjectController');
+//Route::resource('projects', 'ProjectController');
 
 Route::put('update','GeneryController@update');
