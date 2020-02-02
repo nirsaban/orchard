@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 class GeneryController extends Controller
 {
     public function update(Request $request,$id){
-   
-        $element = $request->table::findOrFail($id);
-        $element->update([$request->col_name => $request->col_value]);
+
+        $table = $request->table;
+        $col = $request->col_name;
+        $colVal= $request->col_value;
+        $affected = DB::update("update '$table' set '$col' = '$colVal' where id = ? ['$id']");
+//        $element = $request->table::findOrFail($id);
+//        $element->update([$request->col_name => $request->col_value]);
         return response()->json('updated', 201);
     }
 }
