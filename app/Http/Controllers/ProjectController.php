@@ -45,8 +45,14 @@ class ProjectController extends Controller
         $project->owner = $attr[0]->owner;
         $project->gas = $attr[0]->gas;
         $project->address = $attr[0]->address;
-        $project->save();
 
+
+        if($project->save()){
+            return response()->json('Project Has Been Saved.', 201);
+        }
+        else{
+            return response()->json('There was a problem saving the project', 500);
+        }
     }
 
     /**
