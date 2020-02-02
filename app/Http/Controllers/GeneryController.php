@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class GeneryController extends Controller
 {
