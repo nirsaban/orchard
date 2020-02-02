@@ -88,8 +88,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $project = Project::find($id);
+       $project = Project::findOrFail($id);
         $project->update(['home_size' => 500]);
+
+        return response()->json('updated', 201);
     }
 
     /**
