@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GeneryController extends Controller
 {
     public function update(Request $request,$id){
-       return  $request->table;
+     var_dump($request->table);die();
 
         $model = $request->table;
 
