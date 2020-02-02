@@ -37,6 +37,7 @@ class ProjectController extends Controller
     {
 
      if(Project::saveNewProject($request)){
+         return $request;
            return response()->json('Project Has Been Saved.', 201);
        }
        else{
