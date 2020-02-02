@@ -16,7 +16,7 @@ class GeneryController extends Controller
         $table = $attr->table;
         $col = $attr->col_name;
         $colVal= $attr->col_value;
-        $affected = DB::update("update '$table' set '$col' = '$colVal' where id = ? ['$id']");
+        $affected = DB::update("update $table set $col = '$colVal' where id = ? [$id]");
 //        $element = $request->table::findOrFail($id);
 //        $element->update([$request->col_name => $request->col_value]);
 
