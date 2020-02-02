@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class GeneryController extends Controller
 {
     public function update(Request $request,$id){
+       return  $request->table;
 
-//        $model = $request->table;
+        $model = $request->table;
 
         $element = Project::findOrFail($id);
         $element->update([$request->col_name => $request->col_value]);
