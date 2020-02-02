@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class GeneryController extends Controller
 {
-    public function update($request,$id){
+    public function update(Request $request,$id){
         return $request;
 //        $model = $request->table;
 //        $element = $model::findOrFail($id);
