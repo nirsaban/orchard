@@ -7,4 +7,5 @@ Route::get('/', function () {
 
 //Route::resource('projects', 'ProjectController');
 
-Route::get('update','GeneryController@update');
+Route::get('/update/{}','GeneryController@update');
+Route::match(['put', 'patch'], 'update/{id}','GeneryController@update');
