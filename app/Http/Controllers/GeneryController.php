@@ -5,7 +5,7 @@ use App\Product;
 use App\Project;
 use Illuminate\Http\Request;
 
-class GeneryControoler extends Controller
+class GeneryController extends Controller
 {
     public function update($request,$id){
         return $request;
