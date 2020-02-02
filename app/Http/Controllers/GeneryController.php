@@ -24,7 +24,7 @@ class GeneryController extends Controller
     }
     public static  function delete(Request $request ,$id){
                $table =  $request->item;
-               return $table;
-               $affected = DB::delete('DELETE FROM $table WHERE id = $id');
+        
+               $affected = DB::delete("DELETE FROM '$table' WHERE id = $id");
     }
 }
