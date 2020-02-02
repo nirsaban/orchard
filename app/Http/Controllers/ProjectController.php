@@ -76,10 +76,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request->col_value;
-//        $project = Project::findOrFail($id);
-//        $project->update(['home_size' => 500]);
-//        return response()->json('updated', 201);
+
+        $project = Project::findOrFail($id);
+        $project->update([$request->col_name => $request->col_value]);
+        return response()->json('updated', 201);
     }
 
     /**
