@@ -12,7 +12,7 @@ class GeneryController extends Controller
     public function update(Request $request,$id){
 
         $attr = json_decode($request);
-        return $request->table;
+        return $request->item;
         $table = $attr->table;
         $col = $attr->col_name;
         $colVal= $attr->col_value;
