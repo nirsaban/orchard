@@ -9,9 +9,9 @@ class GeneryController extends Controller
 {
     public function update(Request $request,$id){
 
-        $model = json_decode($request->table);
+//        $model = $request->table;
 
-        $element = $model::findOrFail($id);
+        $element = Project::findOrFail($id);
         $element->update([$request->col_name => $request->col_value]);
         return response()->json('updated', 201);
     }
