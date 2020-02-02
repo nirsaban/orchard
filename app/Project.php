@@ -8,7 +8,7 @@ class Project extends Model
 {
     protected $guarded = [];
     public static function saveNewProject($request){
-        return $request;
+        return $request->data;
         $valid = false;
         $data = json_decode($request->data);
         $attr = $data[0];
