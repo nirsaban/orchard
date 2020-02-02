@@ -35,12 +35,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        if(Project::saveNewProject($request)){
-            return response()->json('Project Has Been Saved.', 201);
-        }
-        else{
-            return response()->json('There was a problem saving the project', 500);
-        }
+        $data = json_decode($request->project);
+        $attr = $data[0];
+        return $attr;
+//        if(Project::saveNewProject($request)){
+//            return response()->json('Project Has Been Saved.', 201);
+//        }
+//        else{
+//            return response()->json('There was a problem saving the project', 500);
+//        }
     }
 
     /**
