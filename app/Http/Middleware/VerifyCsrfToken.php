@@ -19,7 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'http://606.co.il/*',
+        'http://orchard.606.co.il/*',
         'http://127.0.0.1:8000/*',
         'http://127.0.0.1:3000/*',
         'http://127.0.0.1:3001/*',
