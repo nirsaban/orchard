@@ -65,7 +65,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('show', compact('project'));
     }
 
     /**
@@ -86,9 +86,10 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, $id)
     {
-        //
+       $project = Project::find($id);
+        $project->update(['home_size' => 500]);
     }
 
     /**
