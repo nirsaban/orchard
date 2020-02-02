@@ -37,7 +37,7 @@ class ProjectController extends Controller
     {
         $data = json_decode($request->project);
         $attr = $data[0];
-        return $attr;
+        return $attr->toString();
 //        if(Project::saveNewProject($request)){
 //            return response()->json('Project Has Been Saved.', 201);
 //        }
