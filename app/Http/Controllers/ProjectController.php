@@ -35,7 +35,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-     
+
      if(Project::saveNewProject($request)){
 
           return response()->json('Project Has Been Saved.', 201);
@@ -76,9 +76,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $project = Project::findOrFail($id);
-        $project->update(['home_size' => 500]);
-        return response()->json('updated', 201);
+        return $request;
+//        $project = Project::findOrFail($id);
+//        $project->update(['home_size' => 500]);
+//        return response()->json('updated', 201);
     }
 
     /**
