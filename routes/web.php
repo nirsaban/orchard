@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 Route::put('update/{id}','GeneryController@update');
 Route::delete('delete/{id}','GeneryController@delete');
+
