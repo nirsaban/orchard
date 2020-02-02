@@ -35,21 +35,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-
-
-
-        $attr = json_decode($request->project);
-        $project = new Project;
-        $project->home_size = $attr[0]->home_size;
-        $project->bedroom_num =$attr[0]->bedroom_num;
-        $project->bathroom_num =$attr[0]->bathroom_num;
-        $project->floor_num = $attr[0]->floor_num;
-        $project->owner = $attr[0]->owner;
-        $project->gas = $attr[0]->gas;
-        $project->address = $attr[0]->address;
-
-
-        if($project->save()){
+        if(Project::saveNewProject($request)){
             return response()->json('Project Has Been Saved.', 201);
         }
         else{
@@ -88,7 +74,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $project = Project::findOrFail($id);
+        $project = Project::findOrFail($id);
         $project->update(['home_size' => 500]);
         return response()->json('updated', 201);
     }
