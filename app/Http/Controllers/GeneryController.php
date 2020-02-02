@@ -13,12 +13,10 @@ class GeneryController extends Controller
 
         $attr = json_decode($request->item);
 
-        $tableName  = $attr->table;
+        $tableName = $attr->table;
         $column = $attr->col_name;
         $colVal= $attr->col_value;
-
-        $affected = DB::update("UPDATE $tableName SET $column = $colVal where id = $id");
-//        UPDATE `projects` set `home_size` = 2525 where `id` = 12
+        $affected = DB::update("update '$tableName' set '$column' = '$colVal' where id = ? ['$id']");
 //        $element = $request->table::findOrFail($id);
 //        $element->update([$request->col_name => $request->col_value]);
 
