@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        dd(request()->all());
+       return Project::all();
     }
 
     /**
@@ -35,6 +35,8 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
+
 
         $attr = json_decode($request->project);
         $project = new Project;
