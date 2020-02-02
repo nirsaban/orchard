@@ -22,4 +22,7 @@ class GeneryController extends Controller
 
         return response()->json('updated', 201);
     }
+    public static  function delete(Request $request ,$id){
+                return $request->item;
+    }
 }
