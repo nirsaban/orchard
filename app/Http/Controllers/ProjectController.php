@@ -53,9 +53,11 @@ class ProjectController extends Controller
      * @param Project $project
      * @return Project
      */
-    public function show(Project $project)
+    public function show($id)
     {
-        return $project;
+     $project = new Project();
+     $showProject = Project::DB("select * from `project` where project_id = $id");
+       return $showProject;
     }
 
     /**
