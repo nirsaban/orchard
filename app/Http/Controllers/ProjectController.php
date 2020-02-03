@@ -36,7 +36,7 @@ class ProjectController extends Controller
      */
     public function store(AddProject $request)
     {
-
+        return $request;
      if(Project::saveNewProject($request)){
 
           return response()->json('Project Has Been Saved.', 201);
