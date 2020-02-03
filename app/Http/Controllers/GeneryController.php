@@ -27,7 +27,5 @@ class GeneryController extends Controller
                $table =  $request->item;
                $affected = DB::delete("DELETE FROM $table WHERE id = $id");
               return response()->json('deleted', 201);
-
-
     }
 }
