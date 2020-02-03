@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class GeneryController extends Controller
 {
     public static function update(Request $request,$id){
-return $request;
+        
         $attr = json_decode($request->item);
         $tableName = $attr->table;
         $column = $attr->col_name;
