@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddProject;
 use App\Project;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(AddProject $request)
     {
 
      if(Project::saveNewProject($request)){
@@ -74,25 +75,25 @@ class ProjectController extends Controller
      * @param Project $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-
-        $project = Project::findOrFail($id);
-        $project->update([$request->col_name => $request->col_value]);
-        return response()->json('updated', 201);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Project $project
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $project = Project::findOrFail($id);
-        $project->delete();
-        return response()->json('Project Deleted', 201);
-
-    }
+//    public function update(Request $request, $id)
+//    {
+//
+//        $project = Project::findOrFail($id);
+//        $project->update([$request->col_name => $request->col_value]);
+//        return response()->json('updated', 201);
+//    }
+//
+//    /**
+//     * Remove the specified resource from storage.
+//     *
+//     * @param Project $project
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function destroy($id)
+//    {
+//        $project = Project::findOrFail($id);
+//        $project->delete();
+//        return response()->json('Project Deleted', 201);
+//
+//    }
 }
