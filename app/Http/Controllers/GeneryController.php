@@ -20,7 +20,7 @@ class GeneryController extends Controller
 //        $element = $request->table::findOrFail($id);
 //        $element->update([$request->col_name => $request->col_value]);
 
-        return response()->json('your ${tableName} updated', 201);
+        return response()->json(`your ${tableName} updated`, 201);
     }
     public static  function delete(Request $request ,$id){
                $table =  $request->item;
