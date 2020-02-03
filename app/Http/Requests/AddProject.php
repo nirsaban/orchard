@@ -24,7 +24,7 @@ class AddProject extends FormRequest
     public function rules()
     {
         return [
-           "title"=> "required|min:2|max:50",
+           "title"=> "min:2|max:50",
            "owner"=> "required|min:2|max:50",
             "home_size"=>"required|numeric",
             "bedroom_num"=>"required|numeric",
