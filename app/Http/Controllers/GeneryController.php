@@ -10,16 +10,13 @@ use Illuminate\Support\Facades\DB;
 class GeneryController extends Controller
 {
     public static function update(Request $request,$id){
-
+return $request;
         $attr = json_decode($request->item);
         $tableName = $attr->table;
         $column = $attr->col_name;
         $colVal= $attr->col_value;
-        $primeKey = $attr->prime_key;
-        $affected = DB::update("UPDATE $tableName SET $column= '$colVal' WHERE $primeKey = $id");
-//        $element = $request->table::findOrFail($id);
-//        $element->update([$request->col_name => $request->col_value]);
 
+        $affected = DB::update("UPDATE $tableName SET $column= '$colVal' WHERE id = $id");
         return response()->json('Updated Successfully', 201);
     }
     public static  function delete(Request $request ,$id){

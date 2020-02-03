@@ -14,7 +14,6 @@ class ProjectController extends Controller
      */
     public function index()
     {
-
        return Project::all();
     }
 
@@ -63,10 +62,7 @@ class ProjectController extends Controller
      * @param Project $project
      * @return void
      */
-    public function edit(Project $project)
-    {
-        //
-    }
+
 
     /**
      * Update the specified resource in storage.
