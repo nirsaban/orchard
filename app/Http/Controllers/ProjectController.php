@@ -34,9 +34,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(AddProject $request)
+    public function store(Request $request)
     {
-        return $request;
+        
      if(Project::saveNewProject($request)){
 
           return response()->json('Project Has Been Saved.', 201);
