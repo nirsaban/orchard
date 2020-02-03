@@ -12,7 +12,6 @@ class GeneryController extends Controller
     public static function update(Request $request,$id){
 
         $attr = json_decode($request->item);
-
         $tableName = $attr->table;
         $column = $attr->col_name;
         $colVal= $attr->col_value;

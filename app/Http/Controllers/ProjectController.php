@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddProject;
 use App\Project;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 class ProjectController extends Controller
 {
     /**
@@ -54,11 +52,9 @@ class ProjectController extends Controller
      * @param Project $project
      * @return Project
      */
-    public function show($id)
+    public function show(Project $project)
     {
-     $project = new Project;
-     $project= Project::DB("select * from `project` where project_id = $id");
-       return $project;
+    return $project;
     }
 
     /**
