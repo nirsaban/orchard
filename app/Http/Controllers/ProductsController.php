@@ -22,7 +22,7 @@ public function save(Request $request){
           $attr = DB::select("$sql");
 //          $sku = $attr[0];
 //         print_r($sku->sku);
-            print_r($attr);
+            print_r($attr[0]);
 
 
 
