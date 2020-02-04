@@ -11,7 +11,7 @@ class ProductsController extends Controller
 {
 public function save(Request $request){
             $sql = $request->product;
-           
+
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
 //            $type = $product->type;
@@ -20,7 +20,7 @@ public function save(Request $request){
 //           $attr = DB::select("SELECT sku from products WHERE products_name = '$product_name' and type = '$type' and shingle_type = '$shingle_type' and color = '$color'");
 //           return $attr;
           $attr = DB::select("$sql");
-          return $attr;
+         print_r($attr);
 
 }
 
