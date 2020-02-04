@@ -11,7 +11,7 @@ class ProductsController extends Controller
 {
 public function save(Request $request){
             $sql = $request->product;
-            return $sql;
+           
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
 //            $type = $product->type;
