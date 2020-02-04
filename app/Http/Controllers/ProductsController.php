@@ -25,7 +25,7 @@ public function save(Request $request){
            $attr = DB::select("$sql");
 //           array_push($order,$attr[0]);
 //           return $attr[0]->toArray();
-            return $attr[0]->toArray();
+            return $attr[0];
 
 
 
