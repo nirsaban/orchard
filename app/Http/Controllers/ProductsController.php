@@ -22,9 +22,10 @@ public function save(Request $request){
 //         print_r($sku->sku);
            $order =[];
            $sql = $request->product;
-           $attr = DB::select("$sql");
+           $attr = DB::select("$sql")->toArray();
            array_push($order,$attr[0]);
-           return $attr[0]->toArray();
+//           return $attr[0]->toArray();
+            return $attr;
 
 
 
