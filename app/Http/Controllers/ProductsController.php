@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 class ProductsController extends Controller
 {
 public function save(Request $request){
-            $sql = $request->product;
 
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
@@ -19,13 +18,19 @@ public function save(Request $request){
 //            $color = $product->color;
 //           $attr = DB::select("SELECT sku from products WHERE products_name = '$product_name' and type = '$type' and shingle_type = '$shingle_type' and color = '$color'");
 //           return $attr;
-          $attr = DB::select("$sql");
 //          $sku = $attr[0];
 //         print_r($sku->sku);
-            print_r($attr[0]);
+           $order =[];
+           $sql = $request->product;
+           $attr = DB::select("$sql");
+           array_push($order,$attr[0]);
+           return $attr[0]->toArray();
 
 
 
 }
+                public function saveAll(Request $request){
+                    return $request->orders;
 
+                }
 }
