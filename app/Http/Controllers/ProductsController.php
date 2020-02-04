@@ -20,7 +20,8 @@ public function save(Request $request){
 //           $attr = DB::select("SELECT sku from products WHERE products_name = '$product_name' and type = '$type' and shingle_type = '$shingle_type' and color = '$color'");
 //           return $attr;
           $attr = DB::select("$sql")->get();
-         print_r($attr);
+          $sku = $attr[0];
+         print_r($sku['sku']);
 
 }
 
