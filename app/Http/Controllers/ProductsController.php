@@ -2,13 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class ProductsController extends Controller
 {
 public function save(Request $request){
-    return $request->product;
+            $sql = $request->product;
+            return $sql;
+//           $product = json_decode($request->product);
+//            $product_name = $product->product_name;
+//            $type = $product->type;
+//            $shingle_type = $product->shingle_type;
+//            $color = $product->color;
+//           $attr = DB::select("SELECT sku from products WHERE products_name = '$product_name' and type = '$type' and shingle_type = '$shingle_type' and color = '$color'");
+//           return $attr;
+//          $attr = DB::select("$sql");
+//          return $attr;
+
 }
 
 }
