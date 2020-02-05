@@ -7,7 +7,6 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
 class ProductsController extends Controller
 {
 public function save(Request $request)
@@ -26,7 +25,7 @@ public function save(Request $request)
         $insert -> project_id = 1;
         $insert ->user_id = 1;
         $insert -> sku = $sku;
-        $insert->save();
+        $insert ->save();
          }
 
          public function showOrder(Request $request){
@@ -41,12 +40,13 @@ public function save(Request $request)
              $res = $affected[$i];
              array_push($skus,$res->sku);
          }
-  $order = [];
+         $order = [];
          for($i = 0; $i < count($skus); $i++){
-             $final = Product::select('*')->where('sku',$skus[$i])->get();
+             $final = Product::select('*')->where('sku',$skus[$i]);
              $order[$i] = $final;
          }
-             return $order;
+             $res = $final->get();
+             return $res;
         }
 
 }
