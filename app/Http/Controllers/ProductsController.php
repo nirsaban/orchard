@@ -20,9 +20,9 @@ public function save(Request $request)
     $lastColumn = array_key_last($arr);
     foreach ($arr as $key => $value) {
         if ($key == $lastColumn) {
-            $sql .= " $key = $value ";
+            $sql .= " $key = '$value' ";
         } else {
-            $sql .= " $key = $value AND ";
+            $sql .= " $key = '$value' AND ";
         }
     }
     $attr = DB::select("$sql");
