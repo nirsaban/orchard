@@ -25,7 +25,8 @@ public function save(Request $request)
             $sql .= " $key = $value AND ";
         }
     }
-    return $sql;
+    $attr = DB::select("$sql");
+    return attr;
 //    $arr = [];
 //
 //    $product = json_decode($request->product);
