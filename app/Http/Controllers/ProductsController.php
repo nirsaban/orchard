@@ -17,7 +17,7 @@ public function save(Request $request)
     foreach ($product as $key => $value) {
         $arr[$key] = $value;
     }
-    return $arr;
+    return var_dump($arr);
 //                foreach ($arr as $key => $value){
 //                    if(count($arr) = arr )
 //               $sql .=" $key = $value AND";
