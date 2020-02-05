@@ -11,6 +11,7 @@ class ProductsController extends Controller
 {
 public function save(Request $request){
 
+    return $request->product;
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
 //            $type = $product->type;
@@ -20,18 +21,18 @@ public function save(Request $request){
 //           return $attr;
 //          $sku = $attr[0];
 //         print_r($sku->sku);
-           $order =[];
-           $sql = $request->product;
-           $attr = DB::select("$sql");
-//           array_push($order,$attr[0]);
-               return json_encode($attr[0]);
-//            return $attr[0];
+//           $order =[];
+//           $sql = $request->product;
+//           $attr = DB::select("$sql");
+////           array_push($order,$attr[0]);
+//               return json_encode($attr[0]);
+////            return $attr[0];
 
 
 
 }
-//                public function saveAll(Request $request){
-//                    return $request->orders;
-//
-//                }
+                public function saveAll(Request $request){
+                    return $request->orders;
+
+                }
 }
