@@ -32,7 +32,11 @@ public function save(Request $request)
          public function showOrder(Request $request){
          $id  = $request->id;
          $affected = Order::select('sku')->where('project_id',$id)->get();
-         return $affected[0];
+//         for($i = 0; $i < count($affected) ; $i++ ){
+//
+//         }
+         $res = $affected[0];
+         return $res->sku;
 
         }
 
