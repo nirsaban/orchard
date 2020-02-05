@@ -12,7 +12,7 @@ class ProductsController extends Controller
 public function save(Request $request){
               $sql = "SELECT sku from products WHERE";
                 $product =  json_decode($request->product);
-                   return count($product);
+                   return $product->toArray();
 //                foreach ($product as $key => $value) {
 //                echo "$key => $value\n";
 //
