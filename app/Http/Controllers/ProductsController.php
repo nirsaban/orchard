@@ -41,7 +41,7 @@ public function save(Request $request)
              $res = $affected[$i];
              array_push($skus,$res->sku);
          }
-
+  $order = [];
          for($i = 0; $i < count($skus); $i++){
              $final = Product::select('*')->where('sku',$skus[$i])->get();
              array_push($order,$final);
