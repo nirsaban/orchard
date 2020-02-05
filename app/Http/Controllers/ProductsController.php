@@ -33,12 +33,16 @@ public function save(Request $request)
          $id  = $request->id;
          $skus = [];
          $affected = Order::select('sku')->where('project_id',$id)->get();
-
          for($i = 0; $i < count($affected) ; $i++ ){
              $res = $affected[$i];
              array_push($skus,$res->sku);
          }
-         return $skus;
+
+         for($i = 0; $i < count($skus); $i++){
+             $final = Product::select('*')->where('sku',$skus[$i])->get();
+             return $final;
+         }
+
         }
 
 }
