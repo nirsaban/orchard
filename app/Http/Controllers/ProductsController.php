@@ -26,7 +26,8 @@ public function save(Request $request)
         }
     }
     $attr = DB::select("$sql");
-    return $attr;
+    $res = $attr[0];
+    return $res->sku;
 //    $arr = [];
 //
 //    $product = json_decode($request->product);
