@@ -41,7 +41,7 @@ public function save(Request $request)
       }
 
         $res =  $attr->get();
-        return $res ;;
+        return $res[0] ;;
    }
 
 //                return $sql;
