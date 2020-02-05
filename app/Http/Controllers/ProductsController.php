@@ -43,8 +43,8 @@ public function save(Request $request)
          }
   $order = [];
          for($i = 0; $i < count($skus); $i++){
-             $order .= Product::select('*')->where('sku',$skus[$i])->get();
-//             array_push($order,$final);
+             $final = Product::select('*')->where('sku',$skus[$i])->get();
+             $order[$i] = $final;
          }
              return $order;
         }
