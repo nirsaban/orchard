@@ -12,16 +12,21 @@ class ProductsController extends Controller
 public function save(Request $request)
 {
     $arr = [];
-//              $sql = "SELECT sku from products WHERE";
+    $sql = "SELECT sku from products WHERE";
     $product = json_decode($request->product);
     foreach ($product as $key => $value) {
         $arr[$key] = $value;
     }
-    return var_dump($arr);
-//                foreach ($arr as $key => $value){
-//                    if(count($arr) = arr )
-//               $sql .=" $key = $value AND";
-//}
+    $lastColumn = end($arr);
+    foreach ($arr as $key => $value) {
+        if ($value == $lastColumn) {
+            $sql .= " $key = $value ";
+        } else {
+            $sql .= " $key = $value AND ";
+        }
+    }
+    return $sql;
+}
 //                return $sql;
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
@@ -41,7 +46,7 @@ public function save(Request $request)
 
 
 
-}
+
                 public function saveAll(Request $request){
                     return $request->orders;
 
