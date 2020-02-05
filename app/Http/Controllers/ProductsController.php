@@ -41,7 +41,8 @@ public function save(Request $request)
       }
 
         $res =  $attr->get();
-        return $res[0] ;;
+        $result = $res[0];
+        return $result->sku;;
    }
 
 //                return $sql;
