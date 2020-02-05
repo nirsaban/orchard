@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
-public function save(Request $request)
+public  static  function save(Request $request)
 {
      $arr = [];
      $product = json_decode($request->product);
@@ -27,7 +27,6 @@ public function save(Request $request)
         $insert -> sku = $sku;
         $insert ->save();
          }
-
          public function showOrder(Request $request){
         ///get the project id
          $id  = $request->id;
@@ -48,5 +47,4 @@ public function save(Request $request)
 
              return $order;
         }
-
 }
