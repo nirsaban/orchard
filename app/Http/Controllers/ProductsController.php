@@ -31,13 +31,14 @@ public function save(Request $request)
 
          public function showOrder(Request $request){
          $id  = $request->id;
+         $skus = [];
          $affected = Order::select('sku')->where('project_id',$id)->get();
-//         for($i = 0; $i < count($affected) ; $i++ ){
-//
-//         }
-         $res = $affected[0];
-         return $res->sku;
 
+         for($i = 0; $i < count($affected) ; $i++ ){
+             $res = $affected[$i];
+             array_push($skus,$res->sku);
+         }
+         return $skus;
         }
 
 }
