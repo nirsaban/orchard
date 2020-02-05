@@ -39,9 +39,9 @@ public function save(Request $request)
      foreach ($arr as $key => $value) {
          $attr = Product::select('sku')->where($key,$value);
       }
-         $attr->get();
-        $res = $attr;
-        return $res->sku;
+
+      
+        return  $attr->get();;
    }
 
 //                return $sql;
