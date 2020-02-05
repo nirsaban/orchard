@@ -40,7 +40,7 @@ public function save(Request $request)
          $attr = Product::select('sku')->where($key,$value);
       }
          $attr->get();
-        $res = $attr[0];
+        $res = $attr;
         return $res->sku;
    }
 
