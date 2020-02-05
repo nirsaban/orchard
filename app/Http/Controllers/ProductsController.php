@@ -11,7 +11,11 @@ class ProductsController extends Controller
 {
 public function save(Request $request){
 
-    return $request->product;
+                $product =  json_decode($request->product);
+                foreach ($product as $key => $value) {
+                echo "$key => $value\n";
+                }
+
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
 //            $type = $product->type;
