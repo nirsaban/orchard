@@ -30,9 +30,13 @@ public function save(Request $request)
          }
 
          public function showOrder(Request $request){
+        ///get the project id
          $id  = $request->id;
+         //declare on empty array that will contain array with all skus rom orders
          $skus = [];
+         //get array skus from orders where project_id  = $id
          $affected = Order::select('sku')->where('project_id',$id)->get();
+         //looping with for to get array with only num skus
          for($i = 0; $i < count($affected) ; $i++ ){
              $res = $affected[$i];
              array_push($skus,$res->sku);
@@ -40,9 +44,9 @@ public function save(Request $request)
 
          for($i = 0; $i < count($skus); $i++){
              $final = Product::select('*')->where('sku',$skus[$i])->get();
-
+             array_push($order,$final);
          }
-             return $final;
+             return $order;
         }
 
 }
