@@ -17,16 +17,19 @@ public function save(Request $request)
     foreach ($product as $key => $value) {
         $arr[$key] = $value;
     }
-    $lastColumn = end($arr);
-    foreach ($arr as $key => $value) {
-        if ($value == $lastColumn) {
-            $sql .= " $key = $value ";
-        } else {
-            $sql .= " $key = $value AND ";
-        }
-    }
-    return $sql;
-}
+     $lastColumn = end($arr);
+     foreach ($arr as $key => $value) {
+         $effected = Product::where($key,$value);
+//         if ($value == $lastColumn) {
+//            $sql .= " $key = $value ";
+//          } else {
+//            $sql .= " $key = $value AND ";
+//          }
+      }
+        return $effected;
+   
+   }
+
 //                return $sql;
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
