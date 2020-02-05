@@ -19,7 +19,7 @@ public function save(Request $request)
     }
      $lastColumn = end($arr);
      foreach ($arr as $key => $value) {
-         $effected = Product::where($key,$value);
+         $effected = Product::select('sku')->where($key,$value);
 //         if ($value == $lastColumn) {
 //            $sql .= " $key = $value ";
 //          } else {
