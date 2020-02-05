@@ -40,9 +40,9 @@ public function save(Request $request)
 
          for($i = 0; $i < count($skus); $i++){
              $final = Product::select('*')->where('sku',$skus[$i])->get();
-             return $final;
-         }
 
+         }
+             return $final;
         }
 
 }
