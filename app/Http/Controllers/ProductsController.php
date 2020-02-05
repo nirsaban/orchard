@@ -29,9 +29,9 @@ public function save(Request $request)
         $insert->save();
          }
 
-         public function showOrder(Order $order){
-
-          return $order;
-
+         public function showOrder($id){
+       $affected = Order::select('sku')->where('project_id',$id)->all();
+        return $affected;
         }
+
 }
