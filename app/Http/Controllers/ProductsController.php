@@ -26,8 +26,8 @@ public function save(Request $request)
 //            $sql .= " $key = $value AND ";
 //          }
       }
-        return $effected;
-   
+        return $effected->get();
+
    }
 
 //                return $sql;
