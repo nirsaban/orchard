@@ -9,18 +9,19 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
-public function save(Request $request){
-              $sql = "SELECT sku from products WHERE";
-                $product =  json_decode($request->product);
-                   return $product->toArray();
-//                foreach ($product as $key => $value) {
-//                echo "$key => $value\n";
-//
-//                if(count($product) = array_search($key, $prodcuts)){
-//
-//                }
+public function save(Request $request)
+{
+    $arr = [];
+//              $sql = "SELECT sku from products WHERE";
+    $product = json_decode($request->product);
+    foreach ($product as $key => $value) {
+        $arr[$key] = $value;
+    }
+    return $arr;
+//                foreach ($arr as $key => $value){
+//                    if(count($arr) = arr )
 //               $sql .=" $key = $value AND";
-//                }
+//}
 //                return $sql;
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
