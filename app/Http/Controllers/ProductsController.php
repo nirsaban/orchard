@@ -42,11 +42,11 @@ public function save(Request $request)
          }
          $order = [];
          for($i = 0; $i < count($skus); $i++){
-             $final = Product::select('*')->where('sku',$skus[$i]);
-             $order[$i] = $final;
+             $final = Product::select('*')->where('sku',$skus[$i])->get();
+//             $order[$i] = $final[0];
          }
-             $res = $final->get();
-             return $res;
+
+             return $final[0];
         }
 
 }
