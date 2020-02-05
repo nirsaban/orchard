@@ -31,7 +31,7 @@ public function save(Request $request)
 
          public function showOrder(Request $request){
       $id  = $request->id;
-       $affected = Order::select('sku')->where('project_id',$id)::all();
+       $affected = Order::select('sku')->where('project_id',$id);
 
         return $affected;
         }
