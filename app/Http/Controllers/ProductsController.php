@@ -12,11 +12,16 @@ class ProductsController extends Controller
 public function save(Request $request){
               $sql = "SELECT sku from products WHERE";
                 $product =  json_decode($request->product);
-                foreach ($product as $key => $value) {
-                echo "$key => $value\n";
-               $sql .=" $key = $value AND";
-                }
-                return $sql;
+                   return count($product);
+//                foreach ($product as $key => $value) {
+//                echo "$key => $value\n";
+//
+//                if(count($product) = array_search($key, $prodcuts)){
+//
+//                }
+//               $sql .=" $key = $value AND";
+//                }
+//                return $sql;
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
 //            $type = $product->type;
