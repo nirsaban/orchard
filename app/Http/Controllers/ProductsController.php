@@ -11,25 +11,41 @@ class ProductsController extends Controller
 {
 public function save(Request $request)
 {
+    $product = json_decode($request->product);
     $arr = [];
     $sql = "SELECT sku from products WHERE";
-    $product = json_decode($request->product);
     foreach ($product as $key => $value) {
         $arr[$key] = $value;
     }
-     $lastColumn = end($arr);
-     foreach ($arr as $key => $value) {
-         $effected = Product::select('sku')->where($key,$value);
-//         if ($value == $lastColumn) {
-//            $sql .= " $key = $value ";
-//          } else {
-//            $sql .= " $key = $value AND ";
-//          }
-      }
-        return $effected->get();
-
-   }
-
+    $lastColumn = array_key_last($arr);
+    foreach ($arr as $key => $value) {
+        if ($key == $lastColumn) {
+            $sql .= " $key = $value ";
+        } else {
+            $sql .= " $key = $value AND ";
+        }
+    }
+    return $sql;
+//    $arr = [];
+//
+//    $product = json_decode($request->product);
+//    foreach ($product as $key => $value) {
+//        $arr[$key] = $value;
+//    }
+//
+//     foreach ($arr as $key => $value) {
+//         $effected = Product::select('sku')->where($key,$value);
+////         if ($value == $lastColumn) {
+////            $sql .= " $key = $value ";
+////          } else {
+////            $sql .= " $key = $value AND ";
+////          }
+//      }
+//
+//        return $effected->get();
+//
+//   }
+}
 //                return $sql;
 //           $product = json_decode($request->product);
 //            $product_name = $product->product_name;
