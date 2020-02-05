@@ -44,9 +44,9 @@ public function save(Request $request)
   $order = [];
          for($i = 0; $i < count($skus); $i++){
              $final = Product::select('*')->where('sku',$skus[$i])->get();
-             $order[$i] = $final;
+//             $order[$i] = $final;
          }
-             return $order;
+             return $final;
         }
 
 }
