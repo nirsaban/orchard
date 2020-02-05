@@ -46,7 +46,7 @@ public function save(Request $request)
              $final = Product::select('*')->where('sku',$skus[$i])->get();
              $order[$i] = $final;
          }
-             return $final;
+             return $order;
         }
 
 }
