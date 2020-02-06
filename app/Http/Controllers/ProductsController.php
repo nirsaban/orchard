@@ -41,12 +41,12 @@ public  static  function save(Request $request)
           }
           $res =  $attr->get();
           $values = [];
-         return  $res[0]->color;
-//          for($i = 0; $i < count($res); $i++){
-//              $values[$i] = $res[$i]->color;
-//          }
-//
-//          return $values;
+       
+          for($i = 0; $i < count($res); $i++){
+              $values[$i] = $res[$i]->color;
+          }
+
+          return $values;
 
 
 
