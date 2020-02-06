@@ -29,17 +29,18 @@ public  static  function save(Request $request)
          }
       public static  function edit(Request $request,$sku){
           $arr = [];
-          $product = $request->product;
+          $product = json_decode($request->product);
           $col =$request->colName;
           foreach ($product as $key => $value) {
               if($key != $col) {
                   $arr[$key] = $value;
               }
           }
-          foreach ($arr as $key => $value) {
-              $attr = Product::select($col)->where($key,$value);
-          }
-          return $attr;
+          return $arr;
+//          foreach ($arr as $key => $value) {
+//              $attr = Product::select($col)->where($key,$value);
+//          }
+//          return $attr;
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
