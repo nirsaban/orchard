@@ -40,7 +40,8 @@ public  static  function save(Request $request)
               $attr = Product::select($col)->where($key,$value);
           }
           $res =  $attr->get();
-          return $res[$col];
+
+          return $res[trim($col)];
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
