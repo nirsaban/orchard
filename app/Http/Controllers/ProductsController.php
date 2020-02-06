@@ -49,7 +49,7 @@ public  static  function save(Request $request)
 
       }
          public  function Update(Request $request,$sku){
-              DB::delete("delete * from orders where sku = '$sku'");
+              DB::delete("delete '*' from orders where sku = '$sku'");
                 }
 
 }
