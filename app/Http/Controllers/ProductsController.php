@@ -38,10 +38,10 @@ public  static  function save(Request $request)
           }
 
           foreach ($arr as $key => $value) {
-              $attr = Product::select('*')->where($key,$value);
+              $attr = Product::select($col)->where($key,$value);
           }
-          return $arr;
-          return $attr->get();
+            $attr->get();
+          return $attr;
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
