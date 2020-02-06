@@ -41,7 +41,7 @@ public  static  function save(Request $request)
               $attr = Product::select($col)->where($key,$value);
           }
           $res =  $attr->get();
-          return $res;
+          return json_decode($res);
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
