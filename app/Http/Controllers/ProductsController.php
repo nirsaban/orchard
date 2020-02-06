@@ -50,7 +50,7 @@ public  static  function save(Request $request)
       }
          public  function Update(Request $request,$id){
 
-                Order::destroy($id);
+             DB::table('order')->delete($id);
 
                 }
 
