@@ -40,7 +40,11 @@ public  static  function save(Request $request)
               $attr = Product::select($col)->where($key,$value);
           }
           $res =  $attr->get();
-         return $res;
+          $values = [];
+          foreach ($res as $key=>$value){
+              array_push($values,$value);
+          }
+          return $values;
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
