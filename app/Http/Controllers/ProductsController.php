@@ -48,8 +48,10 @@ public  static  function save(Request $request)
           return $values;
 
       }
-         public  function Update(Request $request,$sku){
-            Order::deleted()->where('sku',$sku);
+         public  function Update(Request $request,$id){
+
+                $attr = Order::destroy($id);
+
                 }
 
 }
