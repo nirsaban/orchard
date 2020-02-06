@@ -29,7 +29,7 @@ public  static  function save(Request $request)
          }
       public static  function edit(Request $request,$sku){
         $product = Product::select('*')->where('sku',$sku);
-        return $product;
+        return json_encode($product);
 
 
       }
