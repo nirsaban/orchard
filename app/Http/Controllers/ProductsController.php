@@ -44,7 +44,7 @@ public  static  function save(Request $request)
           foreach ($res as $key=>$value){
 
           }
-          return $value;
+          return $key ;
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
