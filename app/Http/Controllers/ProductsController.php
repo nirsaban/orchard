@@ -50,7 +50,24 @@ public  static  function save(Request $request)
 
       }
          public  function Update(Request $request,$id){
-              $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
+               $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
+               return $request->product;
+             $arr = [];
+             $product = json_decode($request->product);
+             foreach ($product as $key => $value) {
+                 $arr[$key] = $value;
+             }
+             foreach ($arr as $key => $value) {
+                 $attr = Product::select('sku')->where($key,$value);
+             }
+             $res = $attr->get();
+             $sku= $res[0]->sku;
+             $insert =  new Order;
+             $insert -> project_id = 1;
+             $insert ->user_id = 1;
+             $insert -> sku = $sku;
+             $insert ->save();
                 }
+
 
 }
