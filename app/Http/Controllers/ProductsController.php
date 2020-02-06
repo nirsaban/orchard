@@ -36,12 +36,11 @@ public  static  function save(Request $request)
                   $arr[$key] = $value;
               }
           }
-
           foreach ($arr as $key => $value) {
               $attr = Product::select($col)->where($key,$value);
           }
           $res =  $attr->get();
-          return json_decode($res);
+          return $res[$col];
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
