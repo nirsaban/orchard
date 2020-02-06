@@ -38,7 +38,7 @@ public  static  function save(Request $request)
           }
 
           foreach ($arr as $key => $value) {
-              $attr = Product::select($col)->where($key,$value);
+              $attr = Product::select('*')->where($key,$value);
           }
           return $attr->get();
 
