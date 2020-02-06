@@ -50,7 +50,7 @@ public  static  function save(Request $request)
       }
          public  function Update(Request $request,$id){
 
-                $attr = Order::destroy($id);
+                Order::destroy($id);
 
                 }
 
