@@ -28,10 +28,22 @@ public  static  function save(Request $request)
         $insert ->save();
          }
       public static  function edit(Request $request,$sku){
-    return $request->product;
-        $product = Product::select('*')->where('sku',$sku)->get();
-        $col = $request->colName;
-        $column = Product::select($col)->where();
+          $arr = [];
+          $product = $request->product;
+          $col =$request->colName;
+          foreach ($product as $key => $value) {
+              if($key != $col) {
+                  $arr[$key] = $value;
+              }
+          }
+          foreach ($arr as $key => $value) {
+              $attr = Product::select($col)->where($key,$value);
+          }
+          return $attr;
+
+//        $product = Product::select('*')->where('sku',$sku)->get();
+//        $col = $request->colName;
+//        $column = Product::select($col)->where();
 
 
       }
