@@ -61,8 +61,7 @@ public  static  function save(Request $request)
                  $attr = Product::select('sku')->where($key,$value);
              }
              $res = $attr->get();
-             return $res;
-             $sku= $res[0]->sku;
+             $sku= $res[1]->sku;
              $insert =  new Order;
              $insert -> project_id = 1;
              $insert ->user_id = 1;
