@@ -36,7 +36,7 @@ public  static  function save(Request $request)
                   $arr[$key] = $value;
               }
           }
-
+            return $arr;
           foreach ($arr as $key => $value) {
               $attr = Product::select('*')->where($key,$value);
           }
