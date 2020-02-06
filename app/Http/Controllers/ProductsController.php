@@ -28,8 +28,9 @@ public  static  function save(Request $request)
         $insert ->save();
          }
       public static  function edit(Request $request,$sku){
+        $product = Product::select('*')->where('sku',$sku);
+        return $product;
 
-       return $request->colName;
 
       }
 }
