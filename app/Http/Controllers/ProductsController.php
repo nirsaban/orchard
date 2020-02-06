@@ -40,7 +40,14 @@ public  static  function save(Request $request)
               $attr = Product::select($col)->where($key,$value);
           }
           $res =  $attr->get();
-          return $res;
+          $values = [];
+         return  $res[0]->color;
+//          for($i = 0; $i < count($res); $i++){
+//              $values[$i] = $res[$i]->color;
+//          }
+//
+//          return $values;
+
 
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
