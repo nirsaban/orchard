@@ -27,9 +27,9 @@ public  static  function save(Request $request)
         $insert -> sku = $sku;
         $insert ->save();
          }
-      public static  function edit($sku){
+      public static  function edit(Request $request,$sku){
 
-       return $sku;
+       return $request->colName;
 
       }
 }
