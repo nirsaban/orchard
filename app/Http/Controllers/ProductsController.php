@@ -28,6 +28,7 @@ public  static  function save(Request $request)
         $insert ->save();
          }
       public static  function edit(Request $request,$sku){
+            ///get all option to this column of specific products
           $arr = [];
           $product = json_decode($request->product);
           $col =$request->colName;
@@ -41,19 +42,14 @@ public  static  function save(Request $request)
           }
           $res =  $attr->get();
           $values = [];
-       
           for($i = 0; $i < count($res); $i++){
               $values[$i] = $res[$i]->color;
           }
-
           return $values;
 
-
-
-//        $product = Product::select('*')->where('sku',$sku)->get();
-//        $col = $request->colName;
-//        $column = Product::select($col)->where();
-
-
       }
+         public  function Update(Request $request,$sku){
+              Order::destroy('*')->where('sku',$sku);
+                }
+
 }

@@ -11,7 +11,7 @@ Route::delete('delete/{id}','GeneryController@delete');
 
 //Product endPoints
 Route::post('addProducts','ProductsController@save');
-Route::put('updateProducts','ProductsController@update');
+Route::delete('updateProducts/{id}','ProductsController@update');
 Route::get('editProducts/{sku}','ProductsController@edit');
 
 //Order endPoints
