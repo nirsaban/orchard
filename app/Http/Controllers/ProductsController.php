@@ -6,6 +6,7 @@ use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\GeneryController;
 
 class ProductsController extends Controller
 {
@@ -49,9 +50,7 @@ public  static  function save(Request $request)
 
       }
          public  function Update(Request $request,$id){
-
-             DB::delete("delete from orders where id = '$id'");
-
+              $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
                 }
 
 }
