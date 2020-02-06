@@ -42,9 +42,9 @@ public  static  function save(Request $request)
           $res =  $attr->get();
           $values = [];
           foreach ($res as $key=>$value){
-              array_push($values,$value);
+
           }
-          return $values;
+          return $value;
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
