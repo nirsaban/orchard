@@ -41,12 +41,12 @@ public  static  function save(Request $request)
           }
           $res =  $attr->get();
           $colValues = [];
-            foreach($res as $key =>$value){
+            foreach($res as $value){
                 for($i = 0; $i < count($res) ; $i++ ){
                     $colValues[$i] = $value;
                 }
             }
-          return  $colValues ;
+          return  $colValues;
 
 //        $product = Product::select('*')->where('sku',$sku)->get();
 //        $col = $request->colName;
