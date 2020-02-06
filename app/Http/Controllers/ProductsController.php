@@ -51,7 +51,7 @@ public  static  function save(Request $request)
       }
          public  function Update(Request $request,$id){
                $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
-               return $request->product;
+
              $arr = [];
              $product = json_decode($request->product);
              foreach ($product as $key => $value) {
@@ -61,6 +61,7 @@ public  static  function save(Request $request)
                  $attr = Product::select('sku')->where($key,$value);
              }
              $res = $attr->get();
+             return $res;
              $sku= $res[0]->sku;
              $insert =  new Order;
              $insert -> project_id = 1;
