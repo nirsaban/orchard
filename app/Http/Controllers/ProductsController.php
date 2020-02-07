@@ -10,23 +10,36 @@ use App\Http\Controllers\GeneryController;
 
 class ProductsController extends Controller
 {
-public  static  function save(Request $request)
+public   function save(Request $request)
 {
-     $arr = [];
-     $product = json_decode($request->product);
-     foreach ($product as $key => $value) {
-        $arr[$key] = $value;
+
+
+    $product = json_decode($request->product);
+    foreach ($product as $key => $value) {
+        $attr = Product::select('sku')->where($key,$value);
     }
-     foreach ($arr as $key => $value) {
-         $attr = Product::select('sku')->where($key,$value);
-      }
-        $res = $attr->get();
-        $sku= $res[0]->sku;
-        $insert =  new Order;
-        $insert -> project_id = 1;
-        $insert ->user_id = 1;
-        $insert -> sku = $sku;
-        $insert ->save();
+    $res = $attr->get();
+    $sku= $res[0]->sku;
+    $insert =  new Order;
+    $insert -> project_id = 1;
+    $insert ->user_id = 1;
+    $insert -> sku = $sku;
+    $insert ->save();
+//     $arr = [];
+//     $product = json_decode($request->product);
+//     foreach ($product as $key => $value) {
+//        $arr[$key] = $value;
+//    }
+//     foreach ($arr as $key => $value) {
+//         $attr = Product::select('sku')->where($key,$value);
+//      }
+//        $res = $attr->get();
+//        $sku= $res[0]->sku;
+//        $insert =  new Order;
+//        $insert -> project_id = 1;
+//        $insert ->user_id = 1;
+//        $insert -> sku = $sku;
+//        $insert ->save();
          }
       public static  function edit(Request $request,$sku){
             ///get all option to this column of specific products
