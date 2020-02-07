@@ -1,8 +1,5 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 ///Projects endPoints
 Route::resource('projects', 'ProjectController');
@@ -25,3 +22,7 @@ Route::get('showOrder','OrderController@showOrder');
 //    Route::post("signup", "userController@validateNewUser");
 //});
 //
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');

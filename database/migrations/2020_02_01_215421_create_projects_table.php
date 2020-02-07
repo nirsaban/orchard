@@ -15,6 +15,15 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('owner');
+            $table->float('home_size');
+            $table->integer('bedroom_num');
+            $table->integer('bathroom_num');
+            $table->integer('floor_num');
+            $table->boolean('gas')->default(0);
+            $table->string('address');
+            $table->text('comment');
             $table->timestamps();
         });
     }
