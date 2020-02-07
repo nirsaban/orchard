@@ -50,7 +50,7 @@ public  static  function save(Request $request)
 
       }
          public  function Update(Request $request,$id){
-               $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
+            $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
 
              $arr = [];
              $product = json_decode($request->product);
