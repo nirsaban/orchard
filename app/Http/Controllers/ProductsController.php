@@ -10,12 +10,16 @@ use App\Http\Controllers\GeneryController;
 
 class ProductsController extends Controller
 {
-public   function save(Request $request)
+public function save(Request $request)
 {
        $products = json_decode($request->product);
-       $products->each(function ($product){
+       foreach ($products as $product){
            return $product;
-       });
+       }
+//       $products->each(function ($product){
+//           return $product;
+//       });
+
 //    $product = json_decode($request->product);
 //    foreach ($product as $key => $value) {
 //        $attr = Product::select('sku')->where($key,$value);
