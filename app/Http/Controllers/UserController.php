@@ -36,8 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request = json_decode($request->user);
-        return $request;
+        return $request->user;
         $user = new User;
     }
 
