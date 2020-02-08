@@ -14,5 +14,5 @@ Route::get('editProducts/{sku}','ProductsController@edit');
 //Order endPoints
 Route::get('showOrder','OrderController@showOrder');
 
-Auth::routes();
-Route::get('/', 'HomeController@index')->name('home');
+
+Route::resource('user','UserController');
