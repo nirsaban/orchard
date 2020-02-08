@@ -14,15 +14,5 @@ Route::get('editProducts/{sku}','ProductsController@edit');
 //Order endPoints
 Route::get('showOrder','OrderController@showOrder');
 
-
-////user endpoints
-//Route::prefix('user')->group(function () {
-//    Route::get("logout", "userController@logOut");
-//    Route::post("signin", "userController@validateUser");
-//    Route::post("signup", "userController@validateNewUser");
-//});
-//
-
 Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
