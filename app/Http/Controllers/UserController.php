@@ -12,7 +12,7 @@ class UserController extends Controller
           $attr = json_decode($request->user);
          if ($user = User::where('email',$attr->email)->first()->toArray()){
              if(Hash::check($attr->password,$user['password'])){
-                  return $session = [Session::put('user_id',$user['id']),Session::put('user_name',$user['name'])];
+                  return Session::put('user_id',$user['id']);
 
              }
          }
