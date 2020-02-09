@@ -26,8 +26,8 @@ class UserController extends Controller
 
         $attr = json_decode($request->user);
         $email = $attr->email;
-        $user = User::select('email')->where('email',$email)->get();
-        if(!empty($user)){
+        $user = User::select('email')->where('email',$email)->first()->toArray();
+        if(($user['email'] == $email)){
             return 'this email already use';
         }else{
            User::saveUser($request);
