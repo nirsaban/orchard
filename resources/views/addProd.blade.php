@@ -15,7 +15,7 @@ type
     <option value="metal">metal</option>
 </select>
 <p>if the user select shingle display this</p>
-<select name="" class="shigle_type">
+<select name="" class="shingle_type">
     <option value=""></option>
     <option value="3-tab">3-tab</option>
     <option value="architectural"> architectural </option>
@@ -35,7 +35,7 @@ type
         let name = document.querySelector('.product_name').innerHTML;
         let type = document.querySelector('.type').value;
         let color =document.querySelector('.color').value;
-        let shingleType = document.querySelector('.shigle_type').value;
+        let shingleType = document.querySelector('.shingle_type').value;
 
         let productObj=
             {
