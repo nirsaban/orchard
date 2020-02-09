@@ -12,9 +12,17 @@ class UserController extends Controller
           $attr = json_decode($request->user);
          if ($user = User::where('email',$attr->email)->first()->toArray()){
              if(Hash::check($attr->password,$user['password'])){
-                  return Session::put('user_id',$user['id']);
-
-             }
+                Session::put('user_id',$user['id']);
+                Session::put('name',$user['name']);
+                if($user['role'] == 7){
+                    Session::put('is_admin',true);
+                }
+                return response("Welcome Back {$user['name']}")->status(201);
+             }return response('invalid email or password')->status(500);
          }
     }
+    public  static function registerUser(Request $request){
+        return $request->user;
+
+}
 }

@@ -16,6 +16,8 @@ Route::get('showOrder','OrderController@showOrder');
 
 
 Route::post('login','UserController@validateUser');
+Route::post('register','UserController@registerUser');
+
 
 
 
