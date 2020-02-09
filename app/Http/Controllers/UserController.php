@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public static function validateUser(Request $request){
-            $attr = $request->user;
-            echo $attr->email;
+            $attr = json_decode($request->user);
+          return $attr->email;
     }
 }
