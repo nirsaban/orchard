@@ -20,5 +20,4 @@ Route::post('login','UserController@validateUser');
 
 
 
-Auth::routes();
 
