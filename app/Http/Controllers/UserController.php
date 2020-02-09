@@ -23,15 +23,14 @@ class UserController extends Controller
          }
     }
     public  static function registerUser(Request $request){
-
         $attr = json_decode($request->user);
         $email = $attr->email;
        if(User::select('email')->where('email',$email)->first() != null){
            return 'this email already use';
-       }else{
-           User::saveUser($request);
-        }
-
-
+       }else if(User::saveUser($request)){
+           return response('welcome  ' .$attr->name);
+        }else{
+           return response('something worng');
+       }
 }
 }
