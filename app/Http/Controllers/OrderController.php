@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function showOrder(Request $request){
+
         ///get the project id
         $id  = $request->id;
         //declare on empty array that will contain array with all skus rom orders
@@ -25,6 +26,6 @@ class OrderController extends Controller
             $final = Product::select('*')->where('sku',$skus[$i])->get();
             $order[$i] = $final[0];
         }
-        return $order;
+        return view('order',$order);
     }
 }
