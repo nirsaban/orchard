@@ -11,6 +11,7 @@ class Project extends Model
         $valid = false;
         $attr = json_decode($request->project);
         $project = new self();
+        $project->user_id =$attr->user_id;
         $project->title = $attr->title;
         $project->owner = $attr->owner;
         $project->home_size = $attr->home_size;

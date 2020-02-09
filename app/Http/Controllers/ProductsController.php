@@ -10,6 +10,9 @@ use App\Http\Controllers\GeneryController;
 
 class ProductsController extends Controller
 {
+    public static function ShowProd(){
+        return view('/addProd');
+    }
 public   function save(Request $request)
 {
 

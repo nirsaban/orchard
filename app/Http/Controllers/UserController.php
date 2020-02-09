@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
+    public static function ShowRegister(){
+        return view('/register');
+    }
+    public static function ShowLogin(){
+        return view('/login');
+    }
+
     public static function validateUser(Request $request){
           $attr = json_decode($request->user);
          if ($user = User::where('email',$attr->email)->first()->toArray()){
@@ -28,9 +35,12 @@ class UserController extends Controller
        if(User::select('email')->where('email',$email)->first() != null){
            return 'this email already use';
        }else if(User::saveUser($request)){
+
+           Sesssion::flash('sm','your account registered successfully');
+
            return response('welcome  ' .$attr->name);
         }else{
-           return response('something worng');
+           return response('something worn');
        }
 }
 }
