@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\loginRequest;
 use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public static function validateUser(Request $request){
-            $attr = json_decode($request->user);
-          return bcrypt($attr->password);
+          $attr = json_decode($request->user);
+         if ($user = User::where('email',$attr->email)->first()->toArray()){
+             return $user;
+         }
     }
 }
