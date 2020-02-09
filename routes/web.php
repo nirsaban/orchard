@@ -16,3 +16,5 @@ Route::get('showOrder','OrderController@showOrder');
 
 
 Route::resource('user','UserController');
+Auth::routes();
+
