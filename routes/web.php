@@ -15,6 +15,10 @@ Route::get('editProducts/{sku}','ProductsController@edit');
 Route::get('showOrder','OrderController@showOrder');
 
 
-Route::resource('user','UserController');
+Route::post('login','UserController@validateUser');
+
+
+
+
 Auth::routes();
 
