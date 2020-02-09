@@ -29,6 +29,8 @@ class UserController extends Controller
         $user = User::select('email')->where('email',$email)->get();
         if(!empty($user)){
             return 'this email already use';
+        }else{
+           User::saveUser($request);
         }
 
 
