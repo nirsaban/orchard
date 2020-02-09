@@ -24,8 +24,8 @@ public   function save(Request $request)
     $res = $attr->get();
     $sku= $res[0]->sku;
     $insert =  new Order;
-    $insert -> project_id = 1;
-    $insert ->user_id = 1;
+    $insert -> project_id = 2;
+    $insert ->user_id = 10;
     $insert -> sku = $sku;
     $insert ->save();
          }
