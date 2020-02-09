@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\loginRequest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 class UserController extends Controller
@@ -24,9 +25,12 @@ class UserController extends Controller
     public  static function registerUser(Request $request){
 
         $attr = json_decode($request->user);
-        if(User::where('email',$attr->email)->first()){
-            return response('this email already use ')->status(500);
+        $email = $attr->email;
+        $user = User::select('email')->where('email',$email)->get();
+        if(!empty($user)){
+            return 'this email already use';
         }
+
 
 }
 }
