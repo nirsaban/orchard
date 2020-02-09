@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public static function validateUser(){
-            return 'foo';
+    public static function validateUser(Request $request){
+            echo $request->email;
     }
 }
