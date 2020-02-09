@@ -29,6 +29,6 @@ class OrderController extends Controller
             $final = Product::select('*')->where('sku',$skus[$i])->get();
             $order[$i] = $final[0];
         }
-        return redirect('/order');
+        return redirect('/showorder',compact($order));
     }
 }
