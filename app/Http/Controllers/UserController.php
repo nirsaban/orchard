@@ -10,7 +10,9 @@ class UserController extends Controller
     public static function validateUser(Request $request){
           $attr = json_decode($request->user);
          if ($user = User::where('email',$attr->email)->first()->toArray()){
-             return $user;
+             if(Hash::check($attr->password,$user['password'])){
+                 echo "all Good";
+             }
          }
     }
 }
