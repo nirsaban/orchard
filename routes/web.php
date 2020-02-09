@@ -16,6 +16,7 @@ Route::get('addProd/','ProductsController@ShowProd');
 
 //Order endPoints
 Route::get('showOrder','OrderController@showOrder');
+Route::get('order','OrderController@saveorder');
 
 
 Route::post('login','UserController@validateUser');

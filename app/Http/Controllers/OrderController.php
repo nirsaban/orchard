@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public static function saveorder(){
+        return view('/order');
+    }
     public function showOrder(Request $request){
 
         ///get the project id
