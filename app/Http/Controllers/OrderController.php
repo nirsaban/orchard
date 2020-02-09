@@ -13,10 +13,12 @@ class OrderController extends Controller
     public function showOrder(Request $request)
     {
         $id = $request->id;
-
         $attr = Order::select('sku')->where('project_id',$id)->get()->toArray();
-        return $attr;
-
+        foreach ($attr as $key => $value){
+            $order = Product::select('*')->where('sku',$value);
+        }
+        $order->get();
+        return $order;
 
         }
 
