@@ -43,7 +43,7 @@ class UserController extends Controller
         $user->password =$attr->password;
         $user->save();
         if($user->id){
-            return response('welcome' .$user->name);
+            return response('welcome ' .$user->name . ' please Login');
         }
     }
 
