@@ -42,7 +42,7 @@ public   function save(Request $request)
           $res =  $attr->get();
           $values = [];
           for($i = 0; $i < count($res); $i++){
-              $values[$i] = $res[$i];
+              $values[$i] = $res[$i]->$col;
           }
           return $values;
 
