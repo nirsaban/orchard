@@ -20,7 +20,7 @@ class GeneryController extends Controller
         $colVal= $attr->col_value;
         $affected = DB::table($tableName)->where('id', $id)->update(array($column => $colVal));
         if($affected > 0){
-            return response()->json('deleted', 201);
+            return response()->json('updated', 201);
         }else{
             return response()->json('something wrong', 201);
         }
