@@ -10,9 +10,7 @@ use App\Http\Controllers\GeneryController;
 
 class ProductsController extends Controller
 {
-    public static function ShowProd(){
-        return view('/addProd');
-    }
+
 public   function save(Request $request)
 {
 
@@ -67,6 +65,9 @@ public   function save(Request $request)
              $insert ->user_id = 1;
              $insert -> sku = $sku;
              $insert ->save();
+             if($insert->id){
+                return 'your product add';
+             }
                 }
 
 
