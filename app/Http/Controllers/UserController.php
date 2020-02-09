@@ -29,7 +29,7 @@ class UserController extends Controller
            return 'this email already use';
        }else if(User::saveUser($request)){
 
-           Sesssion::flash('sm','your account registered successfully');
+           Session::flash('sm','your account registered successfully');
 
            return response('welcome  ' .$attr->name);
         }else{
