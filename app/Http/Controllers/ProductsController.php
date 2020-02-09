@@ -26,49 +26,5 @@ public   function save(Request $request)
     $insert -> sku = $sku;
     $insert ->save();
          }
-      public static  function edit(Request $request,$sku){
-            ///get all option to this column of specific products
-          $arr = [];
-          $product = json_decode($request->product);
-          $col =$request->colName;
-          foreach ($product as $key => $value) {
-              if($key != $col) {
-                  $arr[$key] = $value;
-              }
-          }
-          foreach ($arr as $key => $value) {
-              $attr = Product::select($col)->where($key,$value);
-          }
-          $res =  $attr->get();
-          $values = [];
-          for($i = 0; $i < count($res); $i++){
-              $values[$i] = $res[$i]->$col;
-          }
-          return $values;
-
-      }
-         public  function Update(Request $request,$id){
-            $affected =  DB::table('orders')->where('id','=' ,$id)->delete();
-
-             $arr = [];
-             $product = json_decode($request->product);
-             foreach ($product as $key => $value) {
-                 $arr[$key] = $value;
-             }
-             foreach ($arr as $key => $value) {
-                 $attr = Product::select('sku')->where($key,$value);
-             }
-             $res = $attr->get();
-             $sku= $res[1]->sku;
-             $insert =  new Order;
-             $insert -> project_id = 1;
-             $insert ->user_id = 1;
-             $insert -> sku = $sku;
-             $insert ->save();
-             if($insert->id){
-                return 'your product add';
-             }
-                }
-
 
 }

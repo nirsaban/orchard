@@ -9,14 +9,14 @@ Route::delete('delete/{id}','GeneryController@delete');
 
 //Product endPoints
 Route::post('addProducts','ProductsController@save');
-Route::delete('updateProducts/{id}','ProductsController@update');
-Route::get('editProducts/{sku}','ProductsController@edit');
+
 
 
 
 //Order endPoints
 Route::get('showOrder','OrderController@showOrder');
-
+Route::delete('updateProducts/{id}','OrderController@update');
+Route::get('editProducts/{sku}','OrderController@edit');
 
 
 Route::post('login','UserController@validateUser');
