@@ -15,7 +15,7 @@ class OrderController extends Controller
         $id = $request->id;
         $attr = Order::select('sku')->where('project_id',$id)->get()->toArray();
         foreach ($attr as $key => $value){
-            $order = Product::select('*')->where('sku',$value)->get();;
+            $order = Product::select('*')->where('sku',$value)->get()->toArray();
         }
        $res =  $order;
         return $res;
